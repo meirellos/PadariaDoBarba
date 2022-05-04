@@ -13,12 +13,7 @@
     //Inativar usuario
 
     public function Registrar($data) {
-      /*
-      $data = array(
-        "email" => "vinmeirellos@gmail.com",
-        "nome" => "Vinicius Meirelles",
-        "chave" => "123-456"
-      ) */
+     
      try { 
        $this->db->('login', $data);
        return true;
@@ -28,6 +23,6 @@
      }
 
     }
-    
+
   }
 ?>
