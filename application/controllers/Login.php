@@ -1,5 +1,12 @@
 <?php
   class Login extends CI_Controller{
+    private $crypt = "QuebraASenhaAiSafado@@@@TamoJuntoEscobar235,,,.ç";
+
+    public function __construct(){
+      parent::__construct();
+      $this->load->model("loginModel");
+    }
+
     public function SalvarRegistro(){
       echo $_POST["nome"];
       echo $_POST["email"];
@@ -18,10 +25,10 @@
       $data = array(
         "email" => $_POST["email"],
         "nome" => $_POST["nome"],
-        "chave" => "123-456"
+        "chave" => $chave
       );
 
-      $this->load->model("loginModel");
+      //$this->load->model("loginModel");
       $retorno = $this->loginModel->registrar($data);
       if($retorno){
         echo "Veja seu e-mail para confirmar o cadastro.";
@@ -30,9 +37,57 @@
       }
       
     }
+    //Chamando o formulario de registro
     public function Registro(){
       $this->load->view('login/register');
     }
-    
+    //Apenas chamando o formulario registrarsenha
+    public function RegistrarSenha(){
+      $this->load->view('login/registrarsenha');
+    }
+    //Alteração de senha
+    public function AlterarSenha(){
+      $senha = md5($_POST["senha"] . $this->crypt);
+      $email = $_POST["email"];
+      $chave = $_POST["chave"];
+      //$this->load->model("loginModel");
+      $retorno = $this->loginModel->criarSenha($email, $senha, $chave);
+      
+      if ($retorno){
+        echo "Senha cadastrada com sucesso.";
+      }else {
+        echo "Erro ao cadastrar senha";
+      }
+    }
+
+    //Tela de login 
+    public function Index(){
+      $this->load->view("login/login");
+    }
+
+    public function ValidaLogin(){
+      $email = $_POST["email"];
+      $senha = $_POST["senha"];
+      $senha = md5($senha . $this->crypt);
+
+      //$this->load->model("loginModel");
+      $retorno = $this->loginModel->ValidaLogin($email, $senha); //Pegando o validalogin do model(Login model contem um valida login la).
+      if($retorno){
+        $_SESSION["session"] = array( //Variavel de sessao com nome de session(poder ser qualquer nome).
+          "email" => $email,
+          "admin" => true
+        );
+        echo "Login efetuado com sucesso!";
+        header("Location: /index.php/barba");
+      }else {
+        echo "Usuário e/ou senha inválida.";
+      }
+    }
+
+    public function Deslogar() {
+      unset($_SESSION);
+      header("Location: /index.php/login");
+    }
+
   }
 ?>

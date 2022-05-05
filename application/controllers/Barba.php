@@ -1,23 +1,36 @@
 <?php
 
   class Barba extends CI_Controller {
+    public function __construct(){
+      parent::__construct();
+      /*
+      if ( !isset($_SESSION["session"]) ){ //isset = se existe.
+        echo "Você precisa estar logado.";
+        header("Location: /index.php/login");
+      } */
+    }
+
     public function index() {
       $this->load->model("barbamodel");
 
       $produtos = $this->barbamodel->selectTodos(); //Indo no model e executando a funcao selectTodos.
       $tabela = "";
 
+      //echo "Bem vindo " . @$_SESSION["session"]["email"];
       foreach($produtos as $item) {
         //Passando por GET
-        $tabela = $tabela . "
-          <tr>
+        $tabela = $tabela . " <tr>";
+          if( isset($_SESSION["session"])){
+            $tabela = $tabela ."
           <td style='cursor: pointer'>
                 <a href='/index.php/barba/alterar?id=" . $item->id . "'>
                 ✏️</a> 
                 <a href='/index.php/barba/excluir?id=" . $item->id . "'>
               ❌</a> 
-              </td>
+              </td>";
+            }
 
+            $tabela = $tabela ."
               <td>". $item->nome."</td>
               <td>". $item->perecivel."</td>
               <td>". $item->valor."</td>
