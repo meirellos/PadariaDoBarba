@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $titulo?></title>
-</head>
-<body>
 <h1> Produtos da Padaria do barba </h1>
-<a href="/index.php/barba/formnovo" class="btn btn-success" style="text-decoration: none;"> Adicionar </a>
+<a href="/index.php/barba/formnovo" class="btn btn-success"> Adicionar </a>
 
-
-
-<table border="1">
+<table class="table table-striped">
+  <thead>
   <tr>
-    <td>Options</td>
-    <td>Nome</td>
-    <td>Perecivel</td>
-    <td>Valor</td>
-    <td>Tipo</td>
-    <td>Imagem</td>
+    <th>Options</th>
+    <th>Nome</th>
+    <th>Perecivel</th>
+    <th>Valor</th>
+    <th>Tipo</th>
+    <th>Imagem</th>
   </tr>
+  </thead>
     <?php 
     echo $tabela;
     ?> 
@@ -44,6 +35,3 @@
   } 
   ?> -->
 </table>
-
-</body>
-</html>

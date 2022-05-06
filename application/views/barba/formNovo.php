@@ -1,36 +1,43 @@
 <section class="section">
-<div class="row">
+  <div class="row">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Cadastro de veículo</h5>
+          <h5 class="card-title">Cadastro de veículo</h5>
 
-
-            <form method="POST" action="/index.php/barba/salvarnovo">
-              <label>Nome</label>
-              <input type="text" name="nome"required>
-              <br/>
-              <label>Perecivel</label>
-              <input type="text" name="perecivel"required>
-              <br/>
-              <label>Valor</label>
-              <input type="text" name="valor"required>
-              <br/>
-              <label>Tipo</label>
-              <input type="text" name="tipo"required>
-              <br/>
-              <label>Imagem</label>
-              <input type="text" name="imagem"required>
-              <br/>
-              <input type="submit" value="Salvar" required>
-                <a href="/index.php/barba">Voltar/Cancelar</a>
-            </form>
-
-                </div>
+          <!-- Vertical Form -->
+          <form method="POST" action="/index.php/barba/salvarnovo">
+            <div class="col-12">
+              <label for="inputNanme4" class="form-label">Nome</label>
+              <input type="text" class="form-control" name="nome" required>
+            </div>
+            <div class="col-12">
+              <label for="inputNanme4" class="form-label">Perecivel</label>
+              <input type="text" class="form-control" name="perecivel" required>
+            </div>
+            <div class="col-12">
+              <label for="inputNanme4" class="form-label">Valor</label>
+              <input type="text" class="form-control" name="valor" required>
+            </div>
+            <div class="col-12">
+              <label for="inputNanme4" class="form-label">Tipo</label>
+              <input type="text" class="form-control" name="tipo" required>
+            </div>
+            <div class="col-12">
+              <label for="inputNanme4" class="form-label">Imagem</label>
+              <input type="text" class="form-control" name="imagem" required>
             </div>
 
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Salvar</button>
+              <a class="btn btn-secondary" href="/index.php/barba">Voltar/Cancelar</a>
+            </div>
+          </form><!-- Vertical Form -->
+
         </div>
+      </div>
 
     </div>
 
+  </div>
 </section>
