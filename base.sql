@@ -16,28 +16,25 @@ CREATE TABLE usuario (
 DROP TABLE veiculo;
 
 --Criando tabela cor
-CREATE TABLE cor (
+CREATE TABLE tipo_produto (
 	id INTEGER PRIMARY KEY AUTO_INCREMENT,
-	cor VARCHAR(30)
+	nome_tipo VARCHAR(30)
 );
 
 --Criando tabela veículo
-CREATE TABLE veiculo (
+CREATE TABLE produto (
     id INT AUTO_INCREMENT PRIMARY KEY ,
-    marca VARCHAR(30) ,
-    modelo VARCHAR(30) ,
-    ano INT,
-    cor INT,
+    nome VARCHAR(30),
+    perecivel INT, --Nao sei se esta correto
     valor DECIMAL(10, 2) ,
-    estoque INT,
-    imagem VARCHAR(100)
+    tipo_produto INT
 );
 
 --Criando relacionamento
-ALTER TABLE veiculo
-	ADD CONSTRAINT fk_veiculo_cor
-	FOREIGN KEY (cor)
-	REFERENCES cor(id);
+ALTER TABLE produto
+	ADD CONSTRAINT fk_produto_tipo
+	FOREIGN KEY (tipo_produto)
+	REFERENCES tipo_produto(nome_tipo);
 
 --Adicionando cores
 INSERT INTO cor

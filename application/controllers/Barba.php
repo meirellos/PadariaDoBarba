@@ -5,11 +5,10 @@ class Barba extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    /*
-      if ( !isset($_SESSION["session"]) ){ //isset = se existe.
-        echo "Você precisa estar logado.";
-        header("Location: /index.php/login");
-      } */
+
+    if (!isset($_SESSION["session"])) { //isset = se existe.
+      header("Location: /index.php/login");
+    }
   }
 
   public function index()
