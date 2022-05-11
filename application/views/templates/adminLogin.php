@@ -53,9 +53,13 @@
               <div class="col-12">
                 <button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Entrar</button>
               </div>
+
               <div class="col-12">
                 <p class="small mb-0">Não tem conta? <a href="<?php echo base_url(); ?>login/registro">Crie sua
                     conta</a></p>
+              </div>
+              <div class="col-6">
+                <p class="small mb-0"><a href="<?php echo base_url(); ?>">Voltar ao Menu</a></p>
               </div>
               <!--//form-group-->
             </form>

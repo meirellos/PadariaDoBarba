@@ -85,7 +85,7 @@ class Login extends CI_Controller
         "admin" => true
       );
       echo "Login efetuado com sucesso!";
-      header("Location: /index.php");
+      header("Location: /index.php/barba");
     } else {
       echo "Usuário e/ou senha inválida.";
     }

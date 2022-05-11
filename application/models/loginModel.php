@@ -33,7 +33,7 @@
       $sql = "SELECT count(1) as total FROM usuario WHERE email ='". $email . "'";
       $retorno = $this->db->query($sql)->result();
 
-      var_dump($retorno);
+      //var_dump($retorno);
       if($retorno[0]->total == 0){ //Se encontrou retorna true, pois irá contar os emails e verificar se ja existe
         return true;
       }
@@ -81,4 +81,3 @@
       }
     }
   }
-?>

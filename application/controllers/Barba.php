@@ -76,7 +76,6 @@ class Barba extends CI_Controller
 
     $this->load->model("barbamodel");
     $this->barbamodel->criaProduto($data);
-    var_dump($data);
   }
 
   //Excluindo um produto

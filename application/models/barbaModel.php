@@ -51,7 +51,7 @@ class barbaModel extends CI_Model
   {
     $retorno = $this->db->query("SELECT * FROM produto where id = " . $id);
     return $retorno->result();
-    var_dump($retorno);
+    //var_dump($retorno);
   }
 
   //Buscando pelo tipo do produto
