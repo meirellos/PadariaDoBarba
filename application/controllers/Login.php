@@ -42,12 +42,12 @@ class Login extends CI_Controller
   //Chamando o formulario de registro
   public function Registro()
   {
-    $this->load->view('login/register');
+    $this->load->view('templates/registrar');
   }
   //Apenas chamando o formulario registrarsenha
   public function RegistrarSenha()
   {
-    $this->load->view('login/registrarsenha');
+    $this->load->view('templates/registrarsenha');
   }
   //Alteração de senha
   public function AlterarSenha()
@@ -93,7 +93,7 @@ class Login extends CI_Controller
 
   public function Deslogar()
   {
-    unset($_SESSION);
+    unset($_SESSION["session"]);
     header("Location: /index.php/login");
   }
 }

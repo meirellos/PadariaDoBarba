@@ -50,3 +50,8 @@ VALUES
 --Senha 123
 15fe23bb629ca88e5b53c5213a5b3cfb
 fulana@gmai.com
+
+SELECT P.*, T.nome_tipo AS tipo_prod
+ FROM PRODUTO AS P
+ INNER JOIN TIPO_PRODUTO AS T
+ON T.id = P.tipo;

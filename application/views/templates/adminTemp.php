@@ -2,321 +2,208 @@
 <html lang="en">
 
 <head>
+  <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+
+  <!-- Meta -->
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Forms / Validation - NiceAdmin Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+  <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+  <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- Favicons -->
-  <link href="<?php echo base_url(); ?>public/assets/img/favicon.png" rel="icon">
-  <link href="<?php echo base_url(); ?>public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- FontAwesome JS-->
+  <script defer src="<?php echo base_url(); ?>public/assets/plugins/fontawesome/js/all.min.js"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- App CSS -->
+  <link id="theme-style" rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/portal.css">
 
-  <!-- Vendor CSS Files  href="<?php echo base_url(); ?>public/ -->
-  <link href="<?php echo base_url(); ?>public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="<?php echo base_url(); ?>public/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
-<body>
+<body class="app">
+  <header class="app-header fixed-top">
+    <div class="app-header-inner">
+      <div class="container-fluid py-2">
+        <div class="app-header-content">
+          <div class="row justify-content-between align-items-center">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="col-auto">
+              <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img">
+                  <title>Menu</title>
+                  <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+                </svg>
+              </a>
+            </div>
+            <!--//col-->
+            <div class="search-mobile-trigger d-sm-none col">
+              <i class="search-mobile-trigger-icon fas fa-search"></i>
+            </div>
+            <!--//col-->
+            <div class="app-search-box col">
+              <form class="app-search-form">
+                <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+                <button type="submit" class="btn search-btn btn-primary" value="Search"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+            <!--//app-search-box-->
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="<?php echo base_url(); ?>public/assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Padaria do Barba</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+            <div class="app-utilities col-auto">
+              <div class="app-utility-item app-notifications-dropdown dropdown">
+                <a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" title="Notifications">
+                  <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
+                    <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                  </svg>
+                  <span class="icon-badge">3</span>
+                </a>
+                <!--//dropdown-toggle-->
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+                <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
+                  <div class="dropdown-menu-header p-3">
+                    <h5 class="dropdown-menu-title mb-0">Notifications</h5>
+                  </div>
 
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
 
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
+                  <!--//item-->
 
-        <li class="nav-item dropdown">
+                  <!--//dropdown-menu-content-->
 
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
+                  <div class="dropdown-menu-footer p-2 text-center">
+                    <a href="">View all</a>
+                  </div>
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="<?php echo base_url(); ?>public/assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
                 </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+                <!--//dropdown-menu-->
+              </div>
+              <!--//app-utility-item-->
+              <div class="app-utility-item">
+                <a href="" title="Settings">
+                  <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
+                    <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
+                  </svg>
+                </a>
+              </div>
+              <!--//app-utility-item-->
 
-            <li class="message-item">
-              <a href="#">
-                <img src="<?php echo base_url(); ?>public/assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="<?php echo base_url(); ?>public/assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
-
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="https://i.pinimg.com/originals/dd/ff/61/ddff61e3162dce870f044b240cda6d60.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Vinicius Meirelles</span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo base_url(); ?>index.php">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo base_url(); ?>index.php/barba">
-          <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Produtos</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-    </ul>
-  </aside><!-- End Sidebar-->
-
-  <main id="main" class="main">
-
-    <?php echo $contents ?>
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Vinicius Meirelles</span></strong>. Todos os direitos reservados
+              <div class="app-utility-item app-user-dropdown dropdown">
+                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="<?php echo base_url(); ?>public/assets/images/user.jpg" alt="user profile"></a>
+                <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+                  <li><a class="dropdown-item" href="">Account</a></li>
+                  <li><a class="dropdown-item" href="">Settings</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="index.php/login/deslogar">Log Out</a></li>
+                </ul>
+              </div>
+              <!--//app-user-dropdown-->
+            </div>
+            <!--//app-utilities-->
+          </div>
+          <!--//row-->
+        </div>
+        <!--//app-header-content-->
+      </div>
+      <!--//container-fluid-->
     </div>
+    <!--//app-header-inner-->
 
-  </footer><!-- End Footer -->
+    <div id="app-sidepanel" class="app-sidepanel">
+      <div id="sidepanel-drop" class="sidepanel-drop"></div>
+      <div class="sidepanel-inner d-flex flex-column">
+        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+        <div class="app-branding">
+          <a class="app-logo" href=".."><img class="logo-icon me-2" src="<?php echo base_url(); ?>public/assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        </div>
+        <!--//app-branding-->
 
-  <!-- Vendor JS Files -->
-  <script src="<?php echo base_url(); ?>public/assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/chart.js/chart.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/echarts/echarts.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/quill/quill.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/php-email-form/validate.js"></script>
+        <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+          <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+            <li class="nav-item">
+              <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php">
+                <span class="nav-icon">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z" />
+                    <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                  </svg>
+                </span>
+                <span class="nav-link-text">Dashboard</span>
+              </a>
+              <!--//nav-link-->
+            </li>
+            <!--//nav-item-->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="<?php echo base_url(); ?>index.php/barba">
+                <span class="nav-icon">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                    <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z" />
+                    <circle cx="3.5" cy="5.5" r=".5" />
+                    <circle cx="3.5" cy="8" r=".5" />
+                    <circle cx="3.5" cy="10.5" r=".5" />
+                  </svg>
+                </span>
+                <i class="bi bi-layout-text-window-reverse"></i>
+                <span>Produtos</span>
+              </a>
+            </li>
 
-  <!-- Template Main JS File -->
-  <script src="<?php echo base_url(); ?>public/assets/js/main.js"></script>
+            <!--//nav-item-->
+          </ul>
+          <!--//footer-menu-->
+        </nav>
+      </div>
+      <!--//app-sidepanel-footer-->
+
+    </div>
+    <!--//sidepanel-inner-->
+    </div>
+    <!--//app-sidepanel-->
+
+    < </header>
+
+      <!--//app-header-->
+
+      <div class="app-wrapper">
+
+        <div class="app-content pt-3 p-md-3 p-lg-4">
+          <main id="main" class="main">
+
+            <?php echo $contents ?>
+
+          </main>
+        </div>
+        <!--//app-content-->
+
+        <footer class="app-footer">
+          <div class="container text-center py-3">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <div class="credits">
+              Feito por <a href="https://github.com/meirellos">Vinicius Meirelles</a>
+            </div>
+
+          </div>
+        </footer>
+        <!--//app-footer-->
+
+      </div>
+      <!--//app-wrapper-->
+
+
+      <!-- Javascript -->
+      <script src="<?php echo base_url(); ?>public/assets/plugins/popper.min.js"></script>
+      <script src="<?php echo base_url(); ?>public/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+      <!-- Page Specific JS -->
+      <script src="<?php echo base_url(); ?>public/assets/js/app.js"></script>
 
 </body>
 

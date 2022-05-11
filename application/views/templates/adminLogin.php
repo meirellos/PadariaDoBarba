@@ -1,129 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
+  <title>Padaria do Barba</title>
+
+  <!-- Meta -->
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Login / Padaria do Barba</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>public/favicon.ico">
 
-  <!-- Favicons -->
-  <link href="<?php echo base_url(); ?>public/assets/img/favicon.png" rel="icon">
-  <link href="<?php echo base_url(); ?>public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- FontAwesome JS-->
+  <script defer src="<?php echo base_url(); ?>public/assets/plugins/fontawesome/js/all.min.js"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- App CSS -->
+  <link id="theme-style" rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/portal.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="<?php echo base_url(); ?>public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>public/assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="<?php echo base_url(); ?>public/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
-<body>
-
-  <main>
-    <div class="container">
-
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="<?php echo base_url(); ?>public/assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">Padaria do Barba</span>
-                </a>
-              </div><!-- End Logo -->
-
-              <div class="card mb-3">
-
-                <div class="card-body">
-
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Login em sua conta</h5>
-                    <p class="text-center small">Digite o usuário e senha</p>
-                  </div>
-
-                  <form class="row g-3 needs-validation" action="/index.php/login/validalogin" method="POST">
-
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label">E-mail</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" name="email" class="form-control" id="email" required>
-                        <div class="invalid-feedback">Por favor digite seu e-mail.</div>
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label">Senha</label>
-                      <input type="password" name="senha" class="form-control" id="senha" required>
-                      <div class="invalid-feedback">Por favor digite sua senha.</div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Lembrar de mim</label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Entrar</button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Não tem conta? <a href="<?php echo base_url(); ?>login/registro">Crie sua conta</a></p>
-                    </div>
-                  </form>
-
+<body class="app app-login p-0">
+  <div class="row g-0 app-auth-wrapper">
+    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
+      <div class="d-flex flex-column align-content-end">
+        <div class="app-auth-body mx-auto">
+          <div class="app-auth-branding mb-4"><a class="app-logo"><img class="logo-icon me-2" src="<?php echo base_url(); ?>public/assets/images/app-logo.svg" alt="logo"></a></div>
+          <h2 class="auth-heading text-center mb-5">Login em sua Conta</h2>
+          <div class="auth-form-container text-start">
+            <form class="row g-3 needs-validation" action="/index.php/login/validalogin" method="POST">
+              <div class="col-12">
+                <label for="yourUsername" class="form-label">E-mail</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="email" name="email" class="form-control" id="email" required>
+                  <div class="invalid-feedback">Por favor digite seu e-mail.</div>
                 </div>
               </div>
-
-              <div class="credits">
-                Feito por <a href="https://github.com/meirellos">Vinicius Meirelles</a>
+              <!--//form-group-->
+              <div class="col-12">
+                <label for="yourPassword" class="form-label">Senha</label>
+                <input type="password" name="senha" class="form-control" id="senha" required>
+                <div class="invalid-feedback">Por favor digite sua senha.</div>
               </div>
 
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Lembrar de mim</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Entrar</button>
+              </div>
+              <div class="col-12">
+                <p class="small mb-0">Não tem conta? <a href="<?php echo base_url(); ?>login/registro">Crie sua
+                    conta</a></p>
+              </div>
+              <!--//form-group-->
+            </form>
+
+          </div>
+          <!--//auth-form-container-->
+
+        </div>
+        <!--//auth-body-->
+
+        <footer class="app-auth-footer">
+          <div class="credits">
+            Feito por <a href="https://github.com/meirellos">Vinicius Meirelles</a>
+          </div>
+        </footer>
+        <!--//app-auth-footer-->
+      </div>
+      <!--//flex-column-->
+    </div>
+    <!--//auth-main-col-->
+    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
+      <div class="auth-background-holder">
+      </div>
+      <div class="auth-background-mask"></div>
+      <div class="auth-background-overlay p-3 p-lg-5">
+        <div class="d-flex flex-column align-content-end h-100">
+          <div class="h-100"></div>
+          <div class="overlay-content p-3 p-lg-4 rounded">
+            <h5 class="mb-3 overlay-title">Padaria do Barba</h5>
+            <div>A melhor padaria de Bauru.
             </div>
           </div>
         </div>
-
-      </section>
-
+      </div>
+      <!--//auth-background-overlay-->
     </div>
-  </main><!-- End #main -->
+    <!--//auth-background-col-->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </div>
+  <!--//row-->
 
-  <!-- Vendor JS Files -->
-  <script src="<?php echo base_url(); ?>public/assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/chart.js/chart.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/echarts/echarts.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/quill/quill.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="<?php echo base_url(); ?>public/assets/js/main.js"></script>
 
 </body>
 

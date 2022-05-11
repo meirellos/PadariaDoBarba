@@ -5,7 +5,7 @@ class Barba extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-
+    //var_dump($_SESSION);
     if (!isset($_SESSION["session"])) { //isset = se existe.
       header("Location: /index.php/login");
     }
@@ -36,7 +36,7 @@ class Barba extends CI_Controller
               <td>" . $item->nome . "</td>
               <td>" . $item->perecivel . "</td>
               <td>" . $item->valor . "</td>
-              <td>" . $item->tipo . "</td>
+              <td>" . $item->tipo_prod . "</td>
               <td>
                 <img src='" . $item->imagem . "' style='width:150px'/>
               </td>
@@ -98,12 +98,14 @@ class Barba extends CI_Controller
 
     $id = $_GET["id"];
     $retorno = $this->barbamodel->selectID($id);
+
     $data = array(
       "titulo" => "Alteração de produtos",
-      "produto" => $retorno[0]
+      "produto" => $retorno[0],
+      "opcoes" => $this->comboTipos($retorno[0]->tipo)
     );
 
-    $this->load->view("barba/formAlterar", $data);
+    $this->template->load("templates/adminTemp", "barba/formAlterar", $data);
   }
 
   //Salvando alteração do produto
@@ -130,7 +132,30 @@ class Barba extends CI_Controller
   //Linkando a view formNovo, onde tem o formulario de um novo produto
   public function formNovo()
   {
-    $this->template->load("templates/adminTemp", "barba/formnovo");
+    $opcao = $this->comboTipos(0);
+
+    $data = array(
+      'opcoes' => $opcao
+    );
+
+    $this->template->load("templates/adminTemp", "barba/formnovo", $data);
+  }
+  private function comboTipos($idTipo)
+  {
+    $this->load->model("tipoModel");
+    $tipos = $this->tipoModel->selectTodos();
+    $option = "";
+
+    foreach ($tipos as $linha) {
+      $selecionado = "";
+      if ($idTipo == $linha->id)
+        $selecionado = "selected";
+
+      $option .= "<option 
+      value='" . $linha->id . "' " . $selecionado . "
+      >" . $linha->nome_tipo . " </option>";
+    }
+    return $option;
   }
 
   //Salvando um novo produto
@@ -145,14 +170,15 @@ class Barba extends CI_Controller
     $imagem = $_POST['imagem'];
 
 
-    //$retorno = $this->barbamodel->selectTipo($tipo);
-    //var_dump($retorno);
+    $retorno = $this->barbamodel->selectTipo($tipo);
+    //var_dump($_POST);
 
-    /*if ($retorno[0]->total > 0) {
+    if ($retorno[0]->total > 0) {
       echo "Não pode incluir, já existe um total de: " . $retorno[0]->total . " Itens";
-    } else { }*/ //Validação pelo tipo, precisa ser feita pelo ID.
+    } else {  //Validação pelo tipo, precisa ser feita pelo ID.
 
-    $retorno = $this->barbamodel->criaProduto($nome, $perecivel, $valor, $tipo, $imagem);
-    header("location: /index.php/barba");
+      $retorno = $this->barbamodel->criaProduto($nome, $perecivel, $valor, $tipo, $imagem);
+      header("location: /index.php/barba");
+    }
   }
 }
