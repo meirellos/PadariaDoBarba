@@ -55,6 +55,7 @@ class Barba extends CI_Controller
     );
 
     $this->template->load("templates/adminTemp", "barba/index", $variavel);
+    //$this->load->view("index/product", $tabela);
   }
 
   //Função de criação de um produto

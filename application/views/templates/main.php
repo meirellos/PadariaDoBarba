@@ -103,7 +103,7 @@
 
 
     <!-- Product Start -->
-    <div class="container-xxl bg-light my-6 py-6 pt-0" style="margin: 12rem 0;">
+    <div class="container-xxl bg-light my-6 py-6 pt-0" style="margin: 12rem 0;display:flex;justify-content:center;">
         <div class="container">
             <div class="bg-primary text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row g-4 align-items-center">
@@ -118,57 +118,17 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="text-primary text-uppercase mb-2">// Produtos de nossa Padaria</p>
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <p class="text-primary text-uppercase mb-2">// Barba Produtos</p>
+                <h1 class="display-6 mb-4">Explore a nossa variedade de produtos</h1>
             </div>
+
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">$11 - $99</div>
-                            <h3 class="mb-3">Cake</h3>
-                            <span>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</span>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="<?php echo base_url(); ?>public/teste/img/product-1.jpg" alt="">
-                            <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">$11 - $99
-                            </div>
-                            <h3 class="mb-3">Bread</h3>
-                            <span>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</span>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="<?php echo base_url(); ?>public/teste/img/product-2.jpg" alt="">
-                            <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">$11 - $99
-                            </div>
-                            <h4 class="mb-3">Cookies</h4>
-                            <span>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</span>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="<?php echo base_url(); ?>public/teste/img/product-3.jpg" alt="">
-                            <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <?php echo $tabela; ?>
+
+
+
             </div>
         </div>
     </div>

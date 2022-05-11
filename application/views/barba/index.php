@@ -1,5 +1,5 @@
 <h1> Produtos da Padaria do barba </h1>
-<a href="/index.php/barba/formnovo" class="btn btn-success"> Adicionar </a>
+<a href="/index.php/barba/formnovo" class="btn btn-success"> Adicionar</a>
 
 <table class="table table-striped">
   <thead>
